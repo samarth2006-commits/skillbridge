@@ -1,0 +1,86 @@
+
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trainee Portal | SkillBridge</title><link rel="stylesheet" href="styles.css"></head>
+<body data-page="profile">
+<header class="topbar"><a class="brand" href="index.html"><img src="assets/skillbridge-logo.png"></a><div class="top-user"><div class="avatar">A</div>Aarav Sharma ▾</div></header>
+<div class="shell">
+<aside class="sidebar">
+<a class="nav-item active" data-nav="profile" href="trainee.html">◉ &nbsp; My Profile</a><a class="nav-item" data-nav="programs" href="trainee-programs.html">▣ &nbsp; Programs</a><a class="nav-item" data-nav="outcomes" href="trainee-outcomes.html">◫ &nbsp; Career Outcomes</a><a class="nav-item" data-nav="insights" href="trainee-insights.html">⌁ &nbsp; Insights</a><a class="nav-item" data-nav="resources" href="trainee-resources.html">▤ &nbsp; Resources</a>
+<div class="sidebar-spacer"></div><div class="help"><div style="font-size:26px">◉</div><h4>Need Help?</h4><p>We're here to help you on your journey.</p><button class="btn secondary" style="width:100%">Contact Support</button></div>
+<a class="nav-item" href="index.html">↪ &nbsp; Logout</a>
+</aside>
+<main class="main">
+<div class="page-head"><div><h1>Trainee Portal</h1><p>Complete your profile to get personalized insights and better opportunities.</p></div></div>
+<div class="detail-grid">
+<div>
+<section class="panel"><div class="card-title"><h3>◉ &nbsp; Personal Information</h3></div>
+<div class="form-grid">
+<div class="field full"><label>Full Name</label><input id="fullName"></div><div class="field"><label>Date of Birth</label><input id="dob"></div><div class="field"><label>Email Address</label><input id="email"></div><div class="field"><label>Phone Number</label><input id="phone"></div><div class="field"><label>Location</label><input id="location"></div><div class="field"><label>Highest Education</label><input id="education"></div>
+</div></section>
+<section class="panel section-gap">
+  <div class="card-title">
+    <div>
+      <h3>✓ &nbsp; Verification & Evidence</h3>
+      <div class="muted">Submit documentary evidence so SkillBridge can maintain reliable, consistent follow-up on your outcomes.</div>
+    </div>
+  </div>
+
+  <div class="verification-hero">
+    <div class="verification-summary">
+      <div>
+        <div class="muted">Current verification status</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:4px">
+          <span id="profileVerificationDot" class="verification-dot v-red"></span>
+          <strong id="verificationLabel">0–5% verified</strong>
+        </div>
+      </div>
+      <div class="verification-score-wrap">
+        <div class="verification-ring"><span id="verificationScore">0%</span></div>
+        <div class="muted">Evidence coverage</div>
+      </div>
+    </div>
+
+    <div class="verification-legend">
+      <span class="v-legend"><i style="background:#18a957"></i>Green · Fully verified</span>
+      <span class="v-legend"><i style="background:#2f7de1"></i>Blue · 50–75%</span>
+      <span class="v-legend"><i style="background:#e9c12c"></i>Yellow · 25–49%</span>
+      <span class="v-legend"><i style="background:#f08a24"></i>Orange · 5–24%</span>
+      <span class="v-legend"><i style="background:#e04444"></i>Red · 0–4%</span>
+    </div>
+
+    <div id="verificationRows" class="verification-list"></div>
+
+    <div class="evidence-upload-grid">
+      <div class="evidence-upload"><label>Program certificate / completion proof</label><input type="file" accept=".pdf,.jpg,.jpeg,.png" onchange="handleEvidenceUpload('program',this)"></div>
+      <div class="evidence-upload"><label>Employment / offer proof</label><input type="file" accept=".pdf,.jpg,.jpeg,.png" onchange="handleEvidenceUpload('employment',this)"></div>
+      <div class="evidence-upload"><label>Salary / income proof</label><input type="file" accept=".pdf,.jpg,.jpeg,.png" onchange="handleEvidenceUpload('salary',this)"></div>
+      <div class="evidence-upload"><label>Career outcome / role proof</label><input type="file" accept=".pdf,.jpg,.jpeg,.png" onchange="handleEvidenceUpload('outcome',this)"></div>
+    </div>
+
+    <div class="verification-disclaimer">
+      <b>Prototype verification:</b> for this offline demo, a submitted evidence file contributes to the verification score immediately. In the production system, the same evidence would be validated through issuer checks, authorized reviewers, or trusted data sources before being marked fully verified.
+    </div>
+  </div>
+</section>
+<section class="panel section-gap"><div class="card-title"><div><h3>▣ &nbsp; Program Details</h3><div class="muted">Add all training programs / courses you have completed.</div></div><button class="btn" onclick="addProgram()">＋ Add Program</button></div>
+<div class="table-wrap"><table class="table"><thead><tr><th>#</th><th>Program Name</th><th>Institution Name</th><th>Duration</th><th>Skills Acquired</th><th>Actions</th></tr></thead><tbody id="programRows"></tbody></table></div></section>
+<section class="panel section-gap"><div class="card-title"><div><h3>▣ &nbsp; Career & Outcome Information</h3><div class="muted">Help us understand your career journey and outcomes.</div></div></div>
+<div class="form-grid">
+<div class="field"><label>Current Employment Status</label><select id="employment"><option>Employed</option><option>Self Employed</option><option>Not Employed</option></select></div>
+<div class="field"><label>Current Job Role</label><input id="role"></div><div class="field"><label>Employment Type</label><select id="employmentType"><option>Full-time</option><option>Part-time</option><option>Contract</option><option>Internship</option></select></div>
+<div class="field"><label>Current Organization</label><input id="organization"></div><div class="field"><label>Date of Joining</label><input id="joining"></div><div class="field"><label>Location</label><input id="workLocation"></div>
+<div class="field"><label>Current Monthly Salary (INR)</label><input id="monthlySalary" type="number"></div><div class="field"><label>Expected Monthly Salary (INR)</label><input id="expectedSalary" type="number"></div><div class="field"><label>Work Experience (Overall)</label><input id="experience"></div>
+</div>
+<div class="mini-line"></div><div class="card-title"><h3>Salary Progression (Year-wise)</h3><button class="btn secondary" onclick="alert('For the demo, edit the profile salary records in the saved data flow.')">＋ Add Record</button></div>
+<table class="table"><thead><tr><th>Year</th><th>Role</th><th>Organization</th><th>Annual CTC</th></tr></thead><tbody><tr><td>2024</td><td>Frontend Developer</td><td>TechNova Solutions</td><td>₹5,40,000</td></tr><tr><td>2025 (Current)</td><td>Frontend Developer</td><td>TechNova Solutions</td><td>₹6,00,000</td></tr></tbody></table>
+<div class="form-actions"><button class="btn" onclick="saveProfile()">Save Profile & Get Insights →</button></div>
+</section>
+</div>
+<aside>
+<section class="panel"><h3>Insights & Recommendations</h3><p class="muted">Personalized suggestions based on your profile and journey.</p>
+<div class="insight-card"><strong>Recommended Next Courses</strong><ul><li>Advanced React & Next.js</li><li>System Design Fundamentals</li><li>Backend Development with Node.js</li></ul><a style="color:var(--purple);font-weight:800" href="trainee-insights.html">Explore Courses →</a></div>
+<div class="insight-card"><strong>Job Roles You Can Apply For</strong><ul><li>React Developer</li><li>Frontend Engineer</li><li>UI Developer</li><li>Full Stack Developer</li></ul><a style="color:var(--purple);font-weight:800" href="trainee-insights.html">Explore Jobs →</a></div>
+<div class="insight-card"><strong>Your Progress Snapshot</strong><p><b>3</b> Programs Completed</p><p><b>12</b> Skills Acquired</p><p><b>1.2 Years</b> Experience</p><p><b>₹7.5–12 LPA</b> Estimated Earning Potential</p></div>
+</section>
+</aside>
+</div>
+</main></div></body></html>

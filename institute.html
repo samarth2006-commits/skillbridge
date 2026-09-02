@@ -1,0 +1,20 @@
+
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Institution Trainees | SkillBridge</title><link rel="stylesheet" href="styles.css"></head>
+<body data-page="institute"><header class="topbar"><a class="brand" href="index.html"><img src="assets/skillbridge-logo.png"></a><div class="top-user">🏛️ <span id="instNameDisplay">Code Institute</span> ▾ <div class="avatar">CI</div></div></header><div class="shell"><aside class="sidebar">
+<a class="nav-item" href="institute.html">⌂ &nbsp; Dashboard</a><a class="nav-item active" href="institute.html">♙ &nbsp; Trainees</a><a class="nav-item" href="institute.html">▣ &nbsp; Programs</a><a class="nav-item" href="institute.html">▥ &nbsp; Analytics</a><a class="nav-item" href="institute.html">▤ &nbsp; Reports</a><a class="nav-item" href="institute.html">◌ &nbsp; Resources</a><div class="sidebar-spacer"></div><div class="help"><div style="font-size:26px">◉</div><h4>Need Help?</h4><p>Our support team is here to help you.</p><button class="btn secondary" style="width:100%">Contact Support</button></div><a class="nav-item" href="index.html">↪ &nbsp; Logout</a>
+</aside><main class="main">
+<div class="page-head"><div><h1>Trainees</h1><p>List of trainees who have completed programs from your institution.</p></div><button class="btn secondary" onclick="alert('Demo report export')">⇩ Export</button></div>
+<div class="grid cols-4"><div class="panel kpi"><div class="ico">♙</div><div><div class="num" id="totalTrainees">128</div><div class="lbl">Total Trainees</div></div></div><div class="panel kpi"><div class="ico">✓</div><div><div class="num" id="employedCount">86</div><div class="lbl">Employed</div></div></div><div class="panel kpi"><div class="ico">↗</div><div><div class="num" id="avgRoi">2.48x</div><div class="lbl">Average ROI</div></div></div><div class="panel kpi"><div class="ico">₹</div><div><div class="num">₹6.12 LPA</div><div class="lbl">Avg. Salary</div></div></div></div>
+<div class="filters" style="margin-top:18px"><input id="searchBox" class="filter search" placeholder="Search by trainee name or program..."><button class="btn secondary">⚙ Filters</button></div>
+<section class="panel">
+<div class="card-title"><div><h3>Trainee Outcome Records</h3><div class="muted">The colored dot beside each trainee shows the evidence coverage for their submitted outcomes.</div></div></div>
+<div class="verification-legend" style="margin-bottom:14px">
+  <span class="v-legend"><i style="background:#18a957"></i>Fully verified</span>
+  <span class="v-legend"><i style="background:#2f7de1"></i>50–75%</span>
+  <span class="v-legend"><i style="background:#e9c12c"></i>25–49%</span>
+  <span class="v-legend"><i style="background:#f08a24"></i>5–24%</span>
+  <span class="v-legend"><i style="background:#e04444"></i>0–4%</span>
+</div>
+<div class="table-wrap"><table class="table"><thead><tr><th>Trainee Name</th><th>Program</th><th>Duration</th><th>Employment Status</th><th>ROI</th><th></th></tr></thead><tbody id="instRows"></tbody></table></div><p class="muted">Click any trainee row to view detailed outcome information.</p></section>
+<section class="panel section-gap" style="background:#fbf9ff"><h3>How ROI is calculated</h3><p class="muted">For this prototype, ROI measures the training value attributable to the institution:</p><p><b>ROI (x) = (Current Annual CTC − Estimated Pre-training Annual Income) ÷ Training Program Cost</b></p><p class="muted">A higher value indicates greater economic value associated with the training investment.</p></section>
+</main></div><script src="script.js"></script></body></html>

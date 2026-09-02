@@ -1,0 +1,24 @@
+
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Trainee Details | SkillBridge</title><link rel="stylesheet" href="styles.css"></head>
+<body data-page="detail"><header class="topbar"><a class="brand" href="index.html"><img src="assets/skillbridge-logo.png"></a><div class="top-user">🏛️ Code Institute ▾ <div class="avatar">CI</div></div></header><div class="shell"><aside class="sidebar">
+<a class="nav-item" href="institute.html">⌂ &nbsp; Dashboard</a><a class="nav-item active" href="institute.html">♙ &nbsp; Trainees</a><a class="nav-item" href="institute.html">▣ &nbsp; Programs</a><a class="nav-item" href="institute.html">▥ &nbsp; Analytics</a><a class="nav-item" href="institute.html">▤ &nbsp; Reports</a><a class="nav-item" href="institute.html">◌ &nbsp; Resources</a><div class="sidebar-spacer"></div><a class="nav-item" href="index.html">↪ &nbsp; Logout</a></aside>
+<main class="main"><div class="page-head"><div><p><a href="institute.html" style="color:var(--purple);font-weight:700">← Back to Trainees</a></p><h1 id="tdName">Aarav Sharma</h1><p>Detailed outcome information from the trainee's SkillBridge profile.</p></div></div>
+<div class="panel profile-strip"><div class="profile-photo" id="tdInitials">AS</div><div class="profile-meta"><h2 id="tdName2">Aarav Sharma</h2><p id="tdEmail">aarav.sharma@email.com</p><p>Program: <b id="tdProgram">Full Stack Web Development</b> · Duration: <b id="tdDuration">6 Months</b></p></div><div class="roi-box"><div>ROI</div><div class="roi" id="tdROI">2.65x</div><span class="status employed">Current</span></div></div>
+<div class="detail-verification">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:14px">
+    <div>
+      <h3 style="margin:0 0 5px">Evidence Verification</h3>
+      <p class="muted" style="margin:0">Reliability status based on documentary evidence submitted by the trainee.</p>
+    </div>
+    <div style="text-align:right"><div id="detailVerificationLabel" style="font-weight:850;color:var(--green)">Fully verified</div><strong id="detailVerificationScore" style="font-size:24px;color:var(--green)">100%</strong></div>
+  </div>
+</div>
+<div class="grid cols-3 section-gap">
+<section class="panel"><h3>Program Details</h3><p>Program <b id="tdProgram2">Full Stack Web Development</b></p><p>Institution <b id="tdInstitution">Code Institute</b></p><p>Duration <b id="tdDuration2">6 Months</b></p><p>Program cost <b id="tdCost">₹50,000</b></p></section>
+<section class="panel"><h3>Current Employment</h3><p>Status <span class="status employed" id="tdEmployment">Employed</span></p><p>Current role <b>Frontend Developer</b></p><p>Company <b>TechNova Solutions</b></p><p>Current annual CTC <b id="tdSalary">₹7,20,000</b></p></section>
+<section class="panel"><h3>ROI Calculation</h3><p class="muted">Current Annual CTC − Pre-training Income</p><p style="font-size:22px;font-weight:800" id="roiFormula">(₹7,20,000 − ₹1,80,000) ÷ ₹50,000</p><div class="roi-box"><div class="roi" id="roiReturn">10.80x</div></div></section>
+</div>
+<div class="grid cols-2 section-gap"><section class="panel"><h3>Career Progression</h3><div class="timeline"><div class="milestone"><div class="dot"></div><strong>Training</strong><span>Completed</span></div><div class="milestone"><div class="dot"></div><strong>First Job</strong><span>₹4.5 LPA</span></div><div class="milestone"><div class="dot"></div><strong>Current</strong><span>₹6.0–7.2 LPA</span></div><div class="milestone"><div class="dot"></div><strong>Future</strong><span>Senior Developer</span></div></div></section>
+<section class="panel"><h3>Skills & Additional Information</h3><div id="skills"></div><div class="mini-line"></div><p>Education <b>B.E. Computer Engineering</b></p><p>Last updated <b id="tdUpdated">02 May 2025</b></p></section></div>
+<div class="panel section-gap" style="background:#fbf9ff"><h3>Outcome Notes</h3><p>The institution can use this view to understand what happened after training—employment, salary progression, skills carried into the job, and the economic value associated with the program.</p></div>
+</main></div><script src="script.js"></script><script>document.addEventListener('DOMContentLoaded',()=>{const d=data(),n=new URLSearchParams(location.search).get('name')||d.trainee.name; const t=d.demoTrainees.find(x=>x.name===n)||d.demoTrainees[0]; document.getElementById('tdName2').textContent=t.name;document.getElementById('tdInitials').textContent=t.name.split(' ').map(x=>x[0]).join('').slice(0,2);document.getElementById('tdCost').textContent=fmt(t.cost);document.getElementById('tdSalary').textContent=fmt(t.salary);document.getElementById('tdUpdated').textContent=d.trainee.updated||'—';})</script></body></html>
